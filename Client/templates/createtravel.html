@@ -3,22 +3,22 @@
     <form name="AddTravelForm">
         <div class="form-group">
             <label for="inputTitle">Title</label>
-            <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="travel.title">
+            <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="travel.title" required>
         </div>
         <div class="form-group">
             <label for="inputDescription">Description</label>
-            <input type="text" class="form-control" id="inputDescription" placeholder="Description" ng-model="travel.description">
+            <input type="text" class="form-control" id="inputDescription" placeholder="Description" ng-model="travel.description" required>
         </div>
         <div class="input-append date" id="datepicker">
             <label>Date</label>
-            <input type="text" class="form-control" placeholder="Date" ng-model="travel.date">
+            <input type="text" class="form-control" placeholder="Date" ng-model="travel.date" required>
             <span class="add-on"><i class="icon-th"></i></span>
         </div>
         <div class="form-group">
             <label for="inputLength">Length</label>
-            <input type="text" class="form-control" id="inputLength" placeholder="Length" ng-model="travel.length">
+            <input type="text" class="form-control" id="inputLength" placeholder="Length" ng-model="travel.length" required>
         </div>
-        <button type="submit" class="btn btn-success" ng-click="save()">Save</button>
+        <button type="submit" ng-disabled="AddTravelForm.$invalid" class="btn btn-success" ng-click="save()">Save</button>
     </form>
 
     <script>

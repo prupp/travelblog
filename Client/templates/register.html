@@ -1,33 +1,33 @@
-<section class="register">
+<section class="post">
 
-    <form class="form-horizontal" role="form">
+    <form name="registerForm" class="form-horizontal" role="form">
         <div class="form-group">
             <label for="inputFirstname" class="col-sm-4 control-label">Firstname</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="inputFirstname" placeholder="Firstname" ng-model="registerData.firstname">
+                <input type="text" class="form-control" id="inputFirstname" placeholder="Firstname" ng-model="registerData.firstname" required>
             </div>
         </div>
         <div class="form-group">
-            <label for="inputLastname" class="col-sm-4 control-label">Lastname</label>
+            <label for="inputLastname" class="col-sm-4 control-label">Firstname</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="inputLastname" placeholder="Lastname" ng-model="registerData.lastname">
+                <input type="text" class="form-control" id="inputLastname" placeholder="Lastname" ng-model="registerData.lastname" required>
             </div>
         </div>
         <div class="form-group">
             <label for="inputUsername" class="col-sm-4 control-label">Username</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="inputUsername" placeholder="Username" ng-model="registerData.username">
+                <input type="text" class="form-control" id="inputUsername" placeholder="Username" ng-model="registerData.username" required>
             </div>
         </div>
         <div class="form-group">
             <label for="inputPassword" class="col-sm-4 control-label">Password</label>
             <div class="col-sm-4">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="registerData.password">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="registerData.password" required>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-10">
-                <button type="submit" class="btn btn-success" ng-click="register()">Register</button>
+                <button type="submit" ng-disabled="registerForm.$invalid" class="btn btn-success" ng-click="register()">Register</button>
             </div>
         </div>
     </form>

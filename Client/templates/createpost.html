@@ -1,23 +1,23 @@
 <section class="entry">
 
-    <form name="EditPostForm">
+    <form name="CreatePostForm">
         <div class="form-group">
             <label for="inputTitle">Title</label>
-            <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="entry.title">
+            <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="entry.title" required>
         </div>
         <div class="form-group">
             <label for="inputLocation">Location</label>
-            <input type="text" class="form-control" id="inputLocation" placeholder="Location" ng-model="entry.location">
+            <input type="text" class="form-control" id="inputLocation" placeholder="Location" ng-model="entry.location" required>
         </div>
         <div class="form-group">
             <label for="inputImage">Image URL</label>
-            <input type="text" class="form-control" id="inputImage" placeholder="Image URL" ng-model="entry.image">
+            <input type="text" class="form-control" id="inputImage" placeholder="Image URL" ng-model="entry.image" required>
         </div>
         <div class="form-group">
             <label for="textareaContent">Content</label>
-            <textarea class="form-control" rows="19" id="textareaContent" ng-model="entry.content"></textarea>
+            <textarea class="form-control" rows="19" id="textareaContent" ng-model="entry.content" required></textarea>
         </div>
-        <button type="submit" class="btn btn-success" ng-click="save()">Save</button>
+        <button type="submit" ng-disabled="CreatePostForm.$invalid" class="btn btn-success" ng-click="save()">Save</button>
     </form>
 
 </section>

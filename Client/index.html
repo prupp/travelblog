@@ -18,7 +18,6 @@
 <div class="container-narrow" ng-controller="AuthServiceCtrl">
     <div class="header">
         <div class="pull-right" ng-controller="AuthCtrl">
-            <a ng-href="#/travels" style="color:#5cb85c">Home</a> |
             <span ng-hide="isAuthenticated">
                 <a ng-href="#/login" style="color:#5cb85c">Login</a> |
                 <a ng-href="#/register" style="color:#5cb85c">Register</a>
@@ -27,7 +26,7 @@
                 <a ng-href="#/travels" ng-click='logout()' style="color:#5cb85c">Logout</a>
             </span>
         </div>
-        <h3><span class="glyphicon glyphicon-map-marker" style="color:#5cb85c"></span> Webapp Travelblog</h3>
+        <h3><span class="glyphicon glyphicon-map-marker" style="color:#5cb85c"></span> <a ng-href="#/travels" style="color:#000000; text-decoration: none;">Webapp Travelblog</a></h3>
     </div>
     <hr>
 
