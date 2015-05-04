@@ -1,0 +1,17 @@
+<div class="travels" ng-controller="AuthServiceCtrl">
+    <h1>Choose a travel</h1>
+    <div ng-repeat="travel in travels.travel" ng-controller="EditTravelCtrl">
+        <td>{{ travel.title }}</td>
+        <td>{{ travel.date.date | dateFormat}}</td>
+        <td>{{ travel.description }}</td>
+        <td>{{ travel.length }}</td>
+        <span ng-show="isAdmin">
+            <td><a ng-href="#/travels" ng-click='deleteTravel(travel.id)' style="color:#b81012"><i class=" glyphicon glyphicon-trash"></i></a></td>
+            <td><a ng-href="#/travels/{{travel.id}}/edit" style="color:#5cb85c"><i class=" glyphicon glyphicon-pencil"></i></a></td>
+        </span>
+        <td><a ng-href="#/travels/{{travel.id}}/entries" style="color:#5cb85c"><i class=" glyphicon glyphicon-chevron-right"></i></a></td>
+    </div>
+    <span ng-show="isAdmin">
+        <a href="#/travels/create">Create New</a>
+    </span>
+</div><!-- /.page-content -->

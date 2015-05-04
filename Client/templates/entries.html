@@ -1,0 +1,24 @@
+<div class="entries" ng-controller="AuthServiceCtrl">
+
+    <div class="header">
+        <div class="pull-right" ng-show="isAdmin">
+            <h3><a ng-href="#/travels/{{travel.id}}/entries/create" style="color:#5cb85c"><i class=" glyphicon glyphicon-plus"></i></a></h3>
+        </div>
+            <h1>{{ travel.title}}</h1>
+    </div>
+    <div class="entry">
+    <div ng-repeat="entry in entries.entry | orderBy:'time.date':true" ng-controller="EditEntryCtrl">
+        <h2>{{ entry.title}}</h2>
+        <h5>{{ entry.time.date | datetime }}</h5>
+        <h4>Location: {{ entry.location}}</h4>
+        <div>
+            <img class="img-responsive" ng-src="{{entry.image}}"/>
+        </div>
+        <p>{{ entry.text}}</p>
+        <span ng-show="isAdmin">
+            <a ng-href="#/travels/{{travel.id}}/entries" ng-click='deleteEntry(entry.id)' style="color:#b80926"><i class=" glyphicon glyphicon-minus"></i></a>
+        </span>
+        <hr>
+    </div>
+    </div>
+</div><!-- /.page-content -->

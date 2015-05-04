@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travelblog Philipp Rupp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
+    <link href="css/ngDialog.css" rel="stylesheet">
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+
+<body ng-app="travelblog">
+
+<div class="container-narrow" ng-controller="AuthServiceCtrl">
+    <div class="header">
+        <div class="pull-right" ng-controller="AuthCtrl">
+            <a ng-href="#/travels" style="color:#5cb85c">Home</a> |
+            <span ng-hide="isAuthenticated">
+                <a ng-href="#/login" style="color:#5cb85c">Login</a> |
+                <a ng-href="#/register" style="color:#5cb85c">Register</a>
+            </span>
+            <span ng-show="isAuthenticated">
+                <a ng-href="#/travels" ng-click='logout()' style="color:#5cb85c">Logout</a>
+            </span>
+        </div>
+        <h3><span class="glyphicon glyphicon-map-marker" style="color:#5cb85c"></span> Webapp Travelblog</h3>
+    </div>
+    <hr>
+
+    <div class="container" ng-view=""></div>
+
+    <hr>
+    <div class="footer">
+        <p>&copy; Philipp Rupp 2015</p>
+    </div>
+</div>
+
+<!-- build:js scripts/plugins.js -->
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/modules.js -->
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="include/bootstrap-datepicker.js"></script>
+<script src="include/ngDialog.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="app/app.js"></script>
+<script src="app/services.js"></script>
+<script src="app/controller.js"></script>
+</body>
+</html>

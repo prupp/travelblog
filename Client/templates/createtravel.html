@@ -1,0 +1,34 @@
+<section class="travel">
+
+    <form name="AddTravelForm">
+        <div class="form-group">
+            <label for="inputTitle">Title</label>
+            <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="travel.title">
+        </div>
+        <div class="form-group">
+            <label for="inputDescription">Description</label>
+            <input type="text" class="form-control" id="inputDescription" placeholder="Description" ng-model="travel.description">
+        </div>
+        <div class="input-append date" id="datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+            <label>Date</label>
+            <input type="text" class="form-control" value="12-02-2012" placeholder="Date" ng-model="travel.date">
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <div class="form-group">
+            <label for="inputLength">Length</label>
+            <input type="text" class="form-control" id="inputLength" placeholder="Length" ng-model="travel.length">
+        </div>
+        <button type="submit" class="btn btn-success" ng-click="save()">Save</button>
+    </form>
+
+    <script>
+        $(function(){
+            window.prettyPrint && prettyPrint();
+            $('#datepicker').datepicker({
+                format: 'mm-dd-yyyy',
+                todayBtn: 'linked'
+            });
+        });
+    </script>
+
+</section>
