@@ -7,12 +7,12 @@
             <h1>{{ travel.title}}</h1>
     </div>
     <div class="entry">
-    <div ng-repeat="entry in entries.entry | orderBy:'time.date':true" ng-controller="EditEntryCtrl">
+    <div ng-repeat="entry in entries.entry | orderBy:['date.date','time.date']:true" ng-controller="EditEntryCtrl">
         <h2>{{ entry.title}}</h2>
-        <h5>{{ entry.time.date | datetime }}</h5>
+        <h5>{{ entry.date.date | dateFormat }} - {{ entry.time.date | timeFormat }}</h5>
         <h4>Location: {{ entry.location}}</h4>
         <div>
-            <img class="img-responsive" ng-src="{{entry.image}}"/>
+            <img class="img-responsive center-block" style="margin: 0 auto;" ng-src="{{entry.image}}"/>
         </div>
         <p>{{ entry.text}}</p>
         <span ng-show="isAdmin">

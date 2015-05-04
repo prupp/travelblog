@@ -45,6 +45,19 @@ app.filter('dateFormat', function($filter)
     };
 });
 
+app.filter('timeFormat', function($filter)
+{
+    return function(input)
+    {
+        if(input == null){ return ""; }
+
+        var _date = $filter('date')(new Date(input), 'HH:mm:ss');
+
+        return _date;
+
+    };
+});
+
 app.directive('repeatPassword', function() {
     return {
         require: 'ngModel',

@@ -9,9 +9,9 @@
             <label for="inputDescription">Description</label>
             <input type="text" class="form-control" id="inputDescription" placeholder="Description" ng-model="travel.description">
         </div>
-        <div class="input-append date" id="datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+        <div class="input-append date" id="datepicker">
             <label>Date</label>
-            <input type="text" class="form-control" value="12-02-2012" placeholder="Date" ng-model="travel.date">
+            <input type="text" class="form-control" placeholder="Date" ng-model="travel.date">
             <span class="add-on"><i class="icon-th"></i></span>
         </div>
         <div class="form-group">
@@ -25,7 +25,8 @@
         $(function(){
             window.prettyPrint && prettyPrint();
             $('#datepicker').datepicker({
-                format: 'mm-dd-yyyy',
+                format: 'yyyy-mm-dd',
+                startDate: '-3d',
                 todayBtn: 'linked'
             });
         });
